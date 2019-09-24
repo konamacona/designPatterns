@@ -1,7 +1,3 @@
----
-marp: true
----
-
 <!-- _class: lead -->
 
 # Design Patterns: Builder
@@ -23,7 +19,7 @@ marp: true
 
 > A **design pattern** is a general repeatable solution to a commonly occurring problem in software design.
 
-– Gang of Four
+â€“ Gang of Four
 
 Examples:
 
@@ -69,25 +65,31 @@ class Bird {
 # Builders in JavaScript - 2
 
 ```js
-static class BirdBuilder {
-	static withWingspan(wingspan) {
-    	this.wingspan = wignspan;
-    }
-    
-    static withHabitat(habitat) {
-    	this.habitat = habitat;
-    }
-    
-    static withNestType(nestType) {
-    	this.nestType = nestType;
-    }
-    
-    static build() {
-    	return new Bird(this);
-    }
+class BirdBuilder {
+  constructor() {}
+
+  withWingspan(wingspan) {
+    this.wingspan = wingspan;
+    return this;
+  }
+
+  withHabitat(habitat) {
+    this.habitat = habitat;
+    return this;
+  }
+
+  withNestType(nestType) {
+    this.nestType = nestType;
+    return this;
+  }
+
+  build() {
+    return new Bird(this);
+  }
 }
 ```
 ---
+
 # Builders in JavaScript - 3
 
 ```js
